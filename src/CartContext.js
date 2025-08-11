@@ -42,11 +42,14 @@ export const CartProvider = ({ children }) => {
 
       })
     }
+      const RemoveAll = () => {
+    setCartItems([]);
+    }
     
 
 
   return (
-    <ContextFunction.Provider value={{ QuickAdd, QuickRemove, Remove, cartItems,setCartItems }}>
+    <ContextFunction.Provider value={{ QuickAdd, QuickRemove, Remove, RemoveAll, cartItems,setCartItems }}>
       {children}
     </ContextFunction.Provider>
   );

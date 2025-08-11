@@ -3,6 +3,8 @@ import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from 'yup';
 import { useNavigate } from "react-router-dom";
 //import { useState } from "react";
+import { useContext } from "react";
+import { ContextFunction } from "../../CartContext";
 
 import styles from "./style.module.css";
 
@@ -16,14 +18,19 @@ const validationSchema = Yup.object().shape({
 });
 
 
-const ShippingAddress = () => {
+const ShippingAddress = ({shoe}) => {
+   const{cartItems} = useContext(ContextFunction);
+   const {RemoveAll} = useContext(ContextFunction);
   const navigate = useNavigate();
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    //  e.preventDefault();
     alert('Payment Complete & Order Placed')
     navigate("/");
   };
+
+  
+
 
   return (
     <>
@@ -188,12 +195,30 @@ const ShippingAddress = () => {
         </div>
         </div>
         <br />
-              <button className= {styles.buttonSubmit} onClick={onSubmit} >Continue to Payment</button>
+        <div>
+          {cartItems.length > 0 ? (
+                <>
+                     
+                        <div  shoe = {shoe} className='cart-item' >
+          
+          <button className= {styles.buttonSubmit} onClick={() => { onSubmit(); RemoveAll(shoe); }} >Continue to Payment</button>
+          </div>
+          
+            
+             </>
+             
+               ) : (
+               <button className= {styles.buttonSubmit} onClick={onSubmit} >Continue to Payment</button>
+                
+           )}
+        </div>
+        
             </div>
           </Form>
         )}
       </Formik>
     </div>
+   
     <br />
     <hr />
     <div style={{display:'flex', padding:'2rem', justifyContent:'space-around'}}><p>We accept:</p>
@@ -211,3 +236,7 @@ const ShippingAddress = () => {
 };
 
 export default ShippingAddress;
+
+
+
+

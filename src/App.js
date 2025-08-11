@@ -66,7 +66,6 @@ product.forEach((item) => {
             <>
               <Hero />
               <DiscountBanner />
-         <button className="bg-blue-600" >See me</button>
               <div className='categories'>
                 <h2>Categories</h2>
                 <Categories categories={categories} filterItems={filterItems} categoryImages={categoryImages}/>

@@ -75,7 +75,7 @@
 
 
 .group button:first-child {
-  border-right: none;
+  /* border-right: none; */
   margin:0px;
 }
 
@@ -83,6 +83,9 @@
  border-left: none;
 } */
 .buttonGroup:active{
+    background-color: #C5C6C7;
+}
+.buttonGroup:focus{
     background-color: #C5C6C7;
 }
 
