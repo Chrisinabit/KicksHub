@@ -5,6 +5,7 @@ export const ContextFunction = React.createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = React.useState([]);
 
+
   const QuickAdd = (product) => {
     setCartItems(prevItems => {
       const itemExists = prevItems.find((item)=> item.id === product.id)
@@ -19,8 +20,33 @@ export const CartProvider = ({ children }) => {
       }
     });
   };
+
+  const QuickRemove = (product) => {
+    setCartItems(prevItems => {
+      const itemExists = prevItems.find((item)=> item.id === product.id)
+
+      if(itemExists){
+        return prevItems.map((item)=> item.id===product.id
+        ?{...item, quantity:item.quantity - 1}
+        : item
+      );
+      } else {
+        return[...prevItems, {...product, quantity:1}];
+      }
+    });
+  };
+   const Remove = (product) => {
+    setCartItems(currentItems => {
+     const itemExists = currentItems.filter((item)=> item.id !== product.id)
+      return itemExists;
+
+      })
+    }
+    
+
+
   return (
-    <ContextFunction.Provider value={{ QuickAdd, cartItems,setCartItems }}>
+    <ContextFunction.Provider value={{ QuickAdd, QuickRemove, Remove, cartItems,setCartItems }}>
       {children}
     </ContextFunction.Provider>
   );

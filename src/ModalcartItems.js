@@ -6,6 +6,8 @@ function ModalcartItems({shoe}) {
                 
                 <h3>{shoe.title}</h3>
                 <p>${shoe.price}</p>
+              
+               
               </div>
   )
 }

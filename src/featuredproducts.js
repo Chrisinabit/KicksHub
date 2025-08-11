@@ -1,35 +1,28 @@
-import { useContext } from "react";
-import { ContextFunction } from './CartContext';
+import Footer from './footer';
+import ProductCard from "./ProductCard";
+import { useState } from "react";
 
+const FeaturedProducts = ({ product }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const openCard = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
-const FeaturedProducts = ({product}) => {
-  const {QuickAdd} = useContext(ContextFunction);
   return (
-    <div className='product-grid' >
+    <>
+    <div className="product-grid" onClick={openCard}>
+      {product.map((shoe) => {
     
-      {product.map((Products)=>{
-        const {id, title, price, image, category, rating, description} = Products;
         return (
-          <> 
-          <article key = {id} className='product-card'>
-            <img  className='product-img' src= {image} alt= {title} />
-            <div className='product-info' >
-              <header>
-                <h4> {title} </h4>
-                <h3 className='product-price' > ${price} </h3>
-                <h4>  {category} </h4>
-                <p className='product-rating' > {rating} </p>
-                <p className='product-info'> {description} </p>
-              </header>
-              <button  onClick={() => QuickAdd (Products) } className='add-to-cart' >Quick Add</button>
-            </div>
+          <article key={shoe.id} className="product-card">
+            <ProductCard key={shoe.id} shoe={shoe} />
           </article>
-          </>
         );
-        
- })}
-        </div>
+      })}
+    </div>
+   <Footer />
+   </>
   );
 };
 

@@ -2,11 +2,13 @@ import product from '../data';
 import { useContext } from 'react';
 import { ContextFunction } from '../CartContext';
 import ProductCard from '../ProductCard';
+import Footer from '../footer';
 
 function Kids() {
   const {QuickAdd} = useContext(ContextFunction);
     const kidsShoes = product.filter((shoe) => shoe.gender === 'Kids');
   return (
+    <>
       <div className="men-page">
         <h1>Kiddies Collection</h1>
         <div className="shoes-grid">
@@ -18,6 +20,10 @@ function Kids() {
           ))}
         </div>
       </div>
+      <Footer />
+      <br />
+      </>
+      
   )
 }
 

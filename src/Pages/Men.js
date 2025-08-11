@@ -2,7 +2,7 @@ import product from '../data';
 import { useContext } from 'react';
 import { ContextFunction } from '../CartContext';
 import ProductCard from '../ProductCard'; 
-
+import Footer from '../footer';
 
 
 const Men = () => {
@@ -11,6 +11,7 @@ const Men = () => {
  
 
  return (
+  <>
         <div className="men-page">
           <h1>Men's Collection</h1>
           <div className="shoes-grid">
@@ -22,6 +23,9 @@ const Men = () => {
             ))}
           </div>
         </div>
+        <Footer />
+        <br />
+        </>
       );
       
     }

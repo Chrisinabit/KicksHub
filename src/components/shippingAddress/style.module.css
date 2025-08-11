@@ -1,0 +1,326 @@
+/* Base styles (mobile-first approach) */
+/* .bottomContainer{
+ margin-top: -18rem;
+} */
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #ffffff; */
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 100vh;
+  //padding: 1.5rem;
+  //margin: 0;
+  //justify-self: center;
+}
+
+.phoneInput {
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+  height: auto;
+  min-height: 3rem;
+  font-size: 1rem;
+}
+.passwordContainer {
+  position: relative;
+  width: 100%; /* Match your input width */
+  margin-bottom: 1rem;
+}
+.showPasswordToggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px;
+  color: #666;
+}
+
+.buttonGroup {
+  width: 100%;
+  border: 1px solid #c5c6c7;
+  border-radius: 0;
+  height: 3rem;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.group button:first-child {
+  border-right: none;
+  margin: 0px;
+}
+
+/* .group button:last-child {
+ border-left: none;
+} */
+.buttonGroup:active {
+  background-color: #c5c6c7;
+}
+
+.buttonSubmit {
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: red;
+  color: #ffffff;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.radioGroup {
+  max-width: 600px;
+  margin: 0;
+}
+
+.radioGroup h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.shippingOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin:0;
+  width: 100%;
+}
+
+.shippingOption {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+
+.shippingOption:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.shippingOption:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.shippingOption:not(:first-child) {
+  border-top: none;
+}
+
+.shippingOption:hover {
+  background: #f9fafb;
+}
+
+/* Custom Radio Button */
+.shippingOption input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin: 0 16px 0 0;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  position: relative;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.shippingOption input[type="radio"]:checked {
+  border-color: #ef4444;
+  background: white;
+}
+
+.shippingOption input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #ef4444;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Content Area */
+.shippingContent {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shippingDetails h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 4px 0;
+}
+
+.shippingDetails p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.shippingPrice {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin-left: 20px;
+}
+
+.shippingPriceFree {
+  color: #059669;
+}
+
+/* Selected state styling */
+.shippingOption:has(input:checked) {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+/* Fallback for browsers that don't support :has() */
+.shippingOption.selected {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+/* styles.module.css */
+.input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.inputError {
+  border-color: #dc3545;
+  background-color: #fff0f0;
+}
+
+.errorMessage {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .shippingContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .shippingPrice {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+}
+
+/* Tablet devices (768px and up) */
+@media (min-width: 768px) {
+  .formGroup {
+    width: 100%;
+    max-width: 650px;
+    /* padding-left: 3rem;
+    padding-right: 2rem; */
+    margin: 0px;
+  }
+
+  .phoneInput {
+    padding: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .buttonGroup {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .buttonSubmit {
+    font-size: 1.1rem;
+    width:92%;
+  }
+}
+
+/* Desktop devices (1024px and up) */
+@media (min-width: 1024px) {
+  .formGroup {
+    width: 750px;
+    /* padding-left: 3rem;
+    padding-right: 2rem; */
+  }
+
+  .phoneInput {
+    padding: 0.875rem;
+    font-size: 1.1rem;
+  }
+
+  .buttonGroup {
+    width: 50%;
+    font-size: 1.125rem;
+  }
+
+  .buttonSubmit {
+    font-size: 1.125rem;
+  }
+}
+
+/* Large desktop devices (1440px and up) */
+@media (min-width: 1440px) {
+  /* .formGroup {
+    padding-left: 4rem;
+    padding-right: 3rem;
+  } */
+}
+
+/* Mobile landscape orientation */
+@media (max-width: 767px) and (orientation: landscape) {
+  .formGroup {
+    min-height: auto;
+    //padding: 1rem;
+  }
+
+  .phoneInput,
+  .buttonGroup,
+  .buttonSubmit {
+    height: 2.75rem;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 375px) {
+  .formGroup {
+    padding: 1rem;
+  }
+
+  .phoneInput,
+  .buttonGroup,
+  .buttonSubmit {
+    font-size: 0.9rem;
+  }
+}
+/* @media (min-width:375px){
+  .bottomContainer{
+ margin-top: -2rem;
+}
+
+} */

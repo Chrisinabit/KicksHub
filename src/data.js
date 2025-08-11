@@ -6,6 +6,8 @@ const Products = [
     price: 200,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the Air Max 270 is designed for all-day wear.",
+    Tagline: 'Bestseller',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe52.jpg',
     category: "Running",
     gender: 'Men'
@@ -16,6 +18,8 @@ const Products = [
     price: 250,
     rating:'★ ★ ★ ☆',
     description: "Experience the ultimate in performance with the Adidas 200, engineered for speed and agility.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe6.jpg',
     category: "Running",
     gender: 'Men'
@@ -26,6 +30,8 @@ const Products = [
     price: 250,
     rating:'★ ★ ★ ★ ☆',
     description: "Step up your game with the Adidas 300, Woaturing advanced cushioning and support.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe3.jpg',
     category: "Running",
     gender: 'Men'
@@ -36,6 +42,8 @@ const Products = [
     price: 300,
     rating:'★ ★ ★ ☆',
     description: "Run with confidence in the New Balance, designed for stability and comfort on any terrain.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe4.jpg',
     category: "Running",
     gender: 'Men'
@@ -46,6 +54,8 @@ const Products = [
     price: 150,
     rating:'★ ★ ★ ★ ☆',
     description: "Stay cool and comfortable with our breathable sneakers, perfect for long runs or casual outings.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe5.jpg',
     category: "Running",
     gender: 'Men'
@@ -56,6 +66,8 @@ const Products = [
     price: 350,
     rating:'★ ★ ★ ★ ☆',
     description: "The Nike is a versatile sneaker that combines style and performance, suitable for both workouts and everyday wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe2.jpg',
     category: "Casual",
     gender: 'Men'
@@ -66,6 +78,8 @@ const Products = [
     price: 200,
     rating:'★ ★ ★ ☆',
     description: "Embrace the vintage vibe with our Retro-Sneakers, designed for comfort and a classic look.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe7.jpg',
     category: "Casual",
     gender: 'Men'
@@ -76,6 +90,8 @@ const Products = [
     price: 350,
     rating:'★ ★ ★ ★ ☆',
     description: "Stand out with the Red Breathable Air-Max, Woaturing a bold design and superior breathability.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe8.jpg',
     category: "Casual",
     gender: 'Men'
@@ -86,6 +102,8 @@ const Products = [
     price: 250,
     rating:'★ ★ ★ ★ ☆',
     description: "The Air Max 220 ofWors a sleek design with maximum comfort, perfect for everyday wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe9.jpg',
     category: "Casual",
     gender: 'Men'
@@ -96,6 +114,8 @@ const Products = [
     price: 150,
     rating:'★ ★ ★ ☆',
     description: "Add a pop of color to your wardrobe with our Bright Coloured Sneakers, designed for style and comfort.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe10.jpg',
     category: "Casual",
     gender: 'Men'
@@ -105,7 +125,9 @@ const Products = [
     title: "Black Hightop",
     price: 250,
     rating:'★ ★ ★ ★ ☆', 
-    description: "The Black Hightop combines classic style with modern comfort, making it a must-have for any sneaker collection.",       
+    description: "The Black Hightop combines classic style with modern comfort, making it a must-have for any sneaker collection.", 
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",      
     image: '/images/shoe11.jpg',
     category: "Formal",
     gender: 'Men'
@@ -116,6 +138,8 @@ const Products = [
     price: 300,
     rating:'★ ★ ★ ★ ☆',
     description: "Make a statement with the Multi-Colour Hightop, Woaturing a unique design and comfortable fit.",
+    Tagline: 'Bestseller',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe12.jpg',
     category: "Formal",
     gender: 'Men'
@@ -126,6 +150,8 @@ const Products = [
     price: 400,
     rating:'★ ★ ★ ★ ☆',
     description: "The White Air Max is a timeless classic that ofWors both style and comfort, perfect for any occasion.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe15.jpg',
     category: "Formal",
     gender: 'Men'
@@ -136,6 +162,8 @@ const Products = [
     price: 300,
     rating:'★ ★ ★ ★ ☆',
     description: "Experience ultimate comfort with our Breathable Fly Sneakers, designed for all-day wear and superior ventilation.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe14.jpg',
     category: "Formal",
     gender: 'Men'
@@ -146,6 +174,8 @@ const Products = [
     price: 150,
     rating:'★ ★ ★ ★ ☆',    
     description: "The Black Air Max 200 combines sleek design with advanced cushioning for a comfortable fit.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe13.jpg',
     category: "Sneakers",
     gender: 'Men'
@@ -156,6 +186,8 @@ const Products = [
     price: 200,
     rating:'★ ★ ★ ★ ☆',
     description: "Stay active and stylish with our Breathable Air Max, designed for performance and comfort.",
+    Tagline: 'Bestseller',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe16.jpg',
     category: "Sneakers",
     gender: 'Men'
@@ -166,6 +198,8 @@ const Products = [
     price: 300,
     rating:'★ ★ ★ ★ ☆',
     description: "The White-Black Smooth sneaker ofWors a sleek and modern design, perfect for any casual outfit.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe17.jpg',
     category: "Sneakers",
     gender: 'Men'
@@ -176,6 +210,8 @@ const Products = [
     price: 400,
     rating:'★ ★ ★ ★ ☆',
     description: "Step out in style with the Fashion Blue Nike, Woaturing a trendy design and comfortable fit.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe18.jpg',
     category: "Sneakers",
     gender: 'Men'
@@ -186,6 +222,8 @@ const Products = [
     price: 400,
     rating:'★ ★ ★ ★ ☆',
     description: "The Pink-White Nike sneaker combines a stylish look with exceptional comfort, perfect for everyday wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe19.jpg',
     category: "Sneakers",
     gender: 'Men'
@@ -196,6 +234,8 @@ const Products = [
     price: 500,
     rating:'★ ★ ★ ★ ☆',
     description: "Elevate your style with our Ladies High-Heel, designed for elegance and comfort.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe20.jpg',
     category: "Formal",
     gender: 'Women'
@@ -206,6 +246,8 @@ const Products = [
     price: 300,
     rating:'★ ★ ★ ☆',
     description: 'Step out in style with the Fashion ladies sneakers, Woaturing a trendy design and comfortable fit.',
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe21.jpg',
     category: "Casual",
     gender: 'Women'
@@ -216,6 +258,8 @@ const Products = [
     price: 400,
     rating:'★ ★ ★ ☆',
     description: "Elevate your style with our Ladies High-Heel, designed for elegance and comfort.",
+    Tagline: 'Bestseller',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe22.jpg',
     category: "Formal",
     gender: 'Women'
@@ -226,6 +270,8 @@ const Products = [
     price: 500,
     rating:'★ ★ ★ ☆',
     description: "Elevate your style with our Ladies High-Heel, designed for elegance and comfort.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe23.jpg',
     category: "Formal",
     gender: 'Women'
@@ -236,6 +282,8 @@ const Products = [
     price: 550,
     rating:'★ ★ ★ ☆',
     description: "Elevate your style with our Ladies Casual High-Heel, designed for elegance and comfort.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe24.jpg',
     category: "Casual",
     gender: 'Women'
@@ -246,6 +294,8 @@ const Products = [
     price: 600,
     rating:'★ ★ ★ ☆',
     description: 'Step out in style with the Fashion ladies high-heel, Woaturing a trendy design and comfortable fit.',
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe25.jpg',
     category: "Formal",
     gender: 'Women'
@@ -256,6 +306,8 @@ const Products = [
     price: 250,
     rating:'★ ★ ★ ☆',
     description: 'Step out in style with the Fashion ladies sneakers, Woaturing a trendy design and comfortable fit.',
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe26.jpg',
     category: "Sneakers",
     gender: 'Wonen'
@@ -266,6 +318,8 @@ const Products = [
     price: 450,
     rating:'★ ★ ★ ☆',
     description: 'Step out in style with the Fashion ladies high-boot, Woaturing a trendy design and comfortable fit.',
+    Tagline: 'Bestseller',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe27.jpg',
     category: "Formal",
     gender: 'Women'
@@ -276,6 +330,8 @@ const Products = [
     price: 350,
     rating:'★ ★ ★ ☆',
     description: 'Step out in style with the Fashion ladies sneakers, Woaturing a trendy design and comfortable fit.',
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe28.jpg',
     category: "Sneakers",
     gender: 'Women'
@@ -286,6 +342,8 @@ const Products = [
     price: 400,
     rating:'★ ★ ★ ☆',
     description: 'Step out in style with the Fashion ladies high casual boots, Woaturing a trendy design and comfortable fit.',
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe29.jpg',
     category: "Casual",
     gender: 'Women'
@@ -296,6 +354,8 @@ const Products = [
     price: 200,
     rating:'★ ★ ★ ☆',
     description: 'Step out in style with the Fashion ladies sneakers, Woaturing a trendy design and comfortable fit.',
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe30.jpg',
     category: "Sneakers",
     gender: 'Women'
@@ -306,6 +366,8 @@ const Products = [
     price: 500,
     rating:'★ ★ ★ ☆',
     description: 'Step out in style with the Fashion ladies high-heel multi, Woaturing a trendy design and comfortable fit.',
+    Tagline: 'Bestseller',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe31.jpg',
     category: "Formal",
     gender: 'Women'
@@ -316,6 +378,8 @@ const Products = [
     price: 550,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the Brown Men's Leather is designed for all-day wear.",
+    Tagline: 'Bestseller',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe43.jpg',
     category: "Formal",
     gender: 'Men'
@@ -326,6 +390,8 @@ const Products = [
     price: 400,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the Black Men's Leather is designed for all-day wear.",
+    Tagline:'Bestseller',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe44.jpg',
     category: "Formal",
     gender: 'Men'
@@ -336,6 +402,8 @@ const Products = [
     price: 350,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the Brown Men's Leather is designed for all-day wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe45.jpg',
     category: "Formal",
     gender: 'Men'
@@ -346,6 +414,8 @@ const Products = [
     price: 400,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the Brown Men's Leather is designed for all-day wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe46.jpg',
     category: "Formal",
     gender: 'Men'
@@ -356,6 +426,8 @@ const Products = [
     price: 450,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the Dark Brown Men's Leather is designed for all-day wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe47.jpg',
     category: "Formal",
     gender: 'Men'
@@ -366,6 +438,8 @@ const Products = [
     price: 350,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the Brown Men's Leather is designed for all-day wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe48.jpg',
     category: "Formal",
     gender: 'Men'
@@ -376,6 +450,8 @@ const Products = [
     price: 350,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the White Casual Men's Flat is designed for all-day wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe49.jpg',
     category: "Casual",
     gender: 'Men'
@@ -386,6 +462,8 @@ const Products = [
     price: 450,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the Black Men's Leather is designed for all-day wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe50.jpg',
     category: "Formal",
     gender: 'Men'
@@ -396,6 +474,8 @@ const Products = [
     price: 350,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the Casual Men's Flat is designed for all-day wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe51.jpg',
     category: "Casual",
     gender: 'Men'
@@ -406,6 +486,8 @@ const Products = [
     price: 200,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the Air Max 270 is designed for all-day wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe1.jpg',
     category: "Running",
     gender: 'Men'
@@ -416,6 +498,8 @@ const Products = [
     price: 350,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the Casual Men's Flat is designed for all-day wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe53.jpg',
     category: "Casual",
     gender: 'Men'
@@ -426,6 +510,8 @@ const Products = [
     price: 350,
     rating:'★ ★ ★ ★ ☆',
     description: "A perfect blend of style and comfort, the Casual Men's Flat is designed for all-day wear.",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe54.jpg',
     category: "Casual",
     gender: 'Men'
@@ -436,6 +522,8 @@ const Products = [
     price: 150,
     rating:'★ ★ ★ ★ ☆',
     description: "Girls and boys smart and practical shoe for kids. Easy to get on, and keep on",
+    Tagline: 'Bestseller',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe32.jpg',
     category: "Kids",
     gender: 'Kids',
@@ -446,6 +534,8 @@ const Products = [
     price: 100,
     rating:'★ ★ ★ ★ ☆',
     description: "Girls and boys smart and practical shoe for kids. Easy to get on, and keep on",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe33.jpg',
     category: "Kids",
     gender: 'Kids',
@@ -456,6 +546,8 @@ const Products = [
     price: 150,
     rating:'★ ★ ★ ★ ☆',
     description: "Girls and boys smart and practical shoe for kids. Easy to get on, and keep on",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe34.jpg',
     category: "Kids",
     gender: 'Kids',
@@ -466,6 +558,8 @@ const Products = [
     price: 120,
     rating:'★ ★ ★ ★ ☆',
     description: "Girls and boys smart and practical shoe for kids. Easy to get on, and keep on",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe35.jpg',
     category: "Kids",
     gender: 'Kids',
@@ -476,6 +570,8 @@ const Products = [
     price: 150,
     rating:'★ ★ ★ ★ ☆',
     description: "Girls and boys smart and practical shoe for kids. Easy to get on, and keep on",
+    Tagline: 'Bestseller',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe36.jpg',
     category: "Kids",
     gender: 'Kids',
@@ -486,6 +582,8 @@ const Products = [
     price: 180,
     rating:'★ ★ ★ ★ ☆',
     description: "Girls and boys smart and practical shoe for kids. Easy to get on, and keep on",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe37.jpg',
     category: "Kids",
     gender: 'Kids',
@@ -496,6 +594,8 @@ const Products = [
     price: 120,
     rating:'★ ★ ★ ★ ☆',
     description: "Girls and boys smart and practical shoe for kids. Easy to get on, and keep on",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe38.jpg',
     category: "Kids",
     gender: 'Kids',
@@ -506,6 +606,8 @@ const Products = [
     price: 170,
     rating:'★ ★ ★ ★ ☆',
     description: "Girls and boys smart and practical shoe for kids. Easy to get on, and keep on",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe39.jpg',
     category: "Kids",
     gender: 'Kids',
@@ -517,6 +619,8 @@ const Products = [
     price: 150,
     rating:'★ ★ ★ ★ ☆',
     description: "Girls and boys smart and practical shoe for kids. Easy to get on, and keep on",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe40.jpg',
     category: "Kids",
     gender: 'Kids',
@@ -527,6 +631,8 @@ const Products = [
     price: 130,
     rating:'★ ★ ★ ★ ☆',
     description: "Girls and boys smart and practical shoe for kids. Easy to get on, and keep on",
+    Tagline: 'Bestseller',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe41.jpg',
     category: "Kids",
     gender: 'Kids',
@@ -537,6 +643,8 @@ const Products = [
     price: 150,
     rating:'★ ★ ★ ★ ☆',
     description: "Girls and boys smart and practical shoe for kids. Easy to get on, and keep on",
+    Tagline: 'New',
+    size: "EU38 EU39 EU40 EU41",
     image: '/images/shoe42.jpg',
     category: "Kids",
     gender: 'Kids',

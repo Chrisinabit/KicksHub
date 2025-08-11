@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import Categories from './categories';
 import FeaturedProducts from './featuredproducts';
-import Footer from './footer';
+//import Footer from './footer';
 import Header from './header';
 import product from './data';
 import Hero from './hero';
@@ -11,6 +11,7 @@ import DiscountBanner from './discountBanner';
 import Men from './Pages/Men';
 import Women from './Pages/women';
 import Kids from './Pages/kids';
+import Sales from './Pages/sales';
 import { CartProvider } from './CartContext';
 
 import {
@@ -18,6 +19,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Shipping from './Pages/shipping';
 
 const allCategories = ['all', ...new Set (product.map((item) => item.category))];
 console.log(allCategories);
@@ -64,6 +66,7 @@ product.forEach((item) => {
             <>
               <Hero />
               <DiscountBanner />
+         <button className="bg-blue-600" >See me</button>
               <div className='categories'>
                 <h2>Categories</h2>
                 <Categories categories={categories} filterItems={filterItems} categoryImages={categoryImages}/>
@@ -82,13 +85,18 @@ product.forEach((item) => {
           <Route path="/women" element={<Women />} />
           {/* Kids Page */}
           <Route path="/kids" element={<Kids />} />
+          {/* Sales Page */}
+          <Route path="/sale" element={<Sales />} />
+           {/* Shipping Page */}
+          <Route path="/ship" element={<Shipping />} />
         </Routes>
         
-
+ 
         {/* Add more routes as needed */}
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
+      
     </Router>
     </CartProvider>
   );
