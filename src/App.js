@@ -66,14 +66,12 @@ product.forEach((item) => {
             <>
               <Hero />
               <DiscountBanner />
-              <div className='categories'>
-                <h2>Categories</h2>
+              
                 <Categories categories={categories} filterItems={filterItems} categoryImages={categoryImages}/>
-              </div>
-              <div className='products'>
-                <h2>Featured Products</h2>
+            
+              
                 <FeaturedProducts product={Products} />
-              </div>
+      
             </>
           } />
 

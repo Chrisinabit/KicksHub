@@ -17,14 +17,15 @@ const ProductCard = ({shoe}) => {
 }
   return (
     <>
-    <div key={shoe.id} className="shoe-card" onClick={openCard} >
-      <div className="">
-                <img className='product-image' src={shoe.image} alt={shoe.title} />
-                <h3>{shoe.title}</h3>
-                <p>${shoe.price}</p>
-                <div>{shoe.rating}</div>
+    <div key={shoe.id} onClick={openCard} >
+     
+                <img className='product-img' src={shoe.image} alt={shoe.title} />
+                 <div className="product-info">
+                <h3 className='product-name'>{shoe.title}</h3>
+                <p className='product-price1'>${shoe.price}</p>
+                <div className='product-rating1'>{shoe.rating}</div>
                   <div className='truncate-text'>{shoe.description}</div>
-                
+                <button class="add-to-cart" onClick={() => QuickAdd(shoe) }>Add to Cart</button>
                 </div>
               </div>
               

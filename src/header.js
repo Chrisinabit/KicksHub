@@ -1,7 +1,7 @@
 import React, { useContext} from 'react';
 import { useState } from 'react';
 import { Link,  useNavigate } from 'react-router-dom';
-import { FaShoppingCart, FaUser, FaSearch, FaBars, FaTimes, FaShoePrints } from 'react-icons/fa';
+import { FaShoppingCart, FaUser, FaSearch, FaBars, FaTimes} from 'react-icons/fa';
 import { ContextFunction } from './CartContext';
 import Modal from './modal'; 
 import { FaTrash } from 'react-icons/fa';
@@ -36,14 +36,17 @@ const subTotal =  cartItems.reduce((total, shoe) => total + (shoe.price * shoe.q
 
   return (
     <>
-
-        <nav className="navbar">
-        <ul className="container">
+        <div className='header' >
+          <div className='nav-container' >
+            <div className='logo' >
+          <span>KicksHub</span></div>
+        <nav>
+        <ul>
         {/* Logo (left) */}
-        <ul className="logo">
+        {/* <ul className="logo">
           <FaShoePrints size={24} />
           <span>KicksHub</span>
-        </ul>
+        </ul> */}
 
         {/* Mobile Hamburger Button */}
         <button 
@@ -184,6 +187,8 @@ const subTotal =  cartItems.reduce((total, shoe) => total + (shoe.price * shoe.q
         </ul>
       </ul>
     </nav>
+    </div>
+    </div>
     </>
   );
 };

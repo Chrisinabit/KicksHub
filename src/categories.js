@@ -4,6 +4,9 @@ const Categories = ({categories, filterItems, categoryImages}) => {
   
   return (
     <>
+    <section className="categories" >
+    <div className="categories-container">
+      <h2 className="section-title" >Shop by Category</h2>
     <div className="category-grid" >
       {categories.map((category, index)=> {
         const image = categoryImages[category]; // Get the image for this category
@@ -21,6 +24,8 @@ const Categories = ({categories, filterItems, categoryImages}) => {
 
       })}
     </div>
+    </div>
+    </section>
     </>
   )
 }

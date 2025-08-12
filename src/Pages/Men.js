@@ -13,8 +13,8 @@ const Men = () => {
  return (
   <>
         <div className="men-page">
-          <h1>Men's Collection</h1>
-          <div className="shoes-grid">
+          <h1 className='section-title'>Men's Collection</h1>
+          <div className="product-grid">
             {mensShoes.map(shoe => (
               <ProductCard
                 key={shoe.id}

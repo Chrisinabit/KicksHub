@@ -14,8 +14,8 @@ const Women = () => {
  return (
   <>
         <div className="men-page">
-          <h1>Women's Collection</h1>
-          <div className="shoes-grid">
+          <h1 className='section-title'>Women's Collection</h1>
+          <div className="product-grid">
             {womensShoes.map(shoe => (
                 <ProductCard
                     key={shoe.id}

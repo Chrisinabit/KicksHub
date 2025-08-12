@@ -11,6 +11,9 @@ const FeaturedProducts = ({ product }) => {
 
   return (
     <>
+    <section className='featured' >
+      <div className='featured-container'>
+        <h2 className='section-title'>Featured Products</h2>
     <div className="product-grid" onClick={openCard}>
       {product.map((shoe) => {
     
@@ -21,6 +24,8 @@ const FeaturedProducts = ({ product }) => {
         );
       })}
     </div>
+    </div>
+    </section>
    <Footer />
    </>
   );

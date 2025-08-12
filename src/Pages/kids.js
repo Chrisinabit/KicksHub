@@ -10,8 +10,8 @@ function Kids() {
   return (
     <>
       <div className="men-page">
-        <h1>Kiddies Collection</h1>
-        <div className="shoes-grid">
+        <h1 className='section-title'>Kiddies Collection</h1>
+        <div className="product-grid">
           {kidsShoes.map(shoe => (
                <ProductCard
                 key={shoe.id}
