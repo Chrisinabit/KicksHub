@@ -1,39 +1,45 @@
-import React, { useContext} from 'react';
-import { ContextFunction } from '../../CartContext';
+import { getCart } from '../../apiServices/shopApi.ts';
+import { useQuery } from '@tanstack/react-query';
 import styles from './style.module.css'
 
 const Summary = () => {
-     const{cartItems} = useContext(ContextFunction); // Mock cart items count
-     const totalItems = cartItems.reduce((sum, shoe) => sum + shoe.quantity, 0); 
-     const subTotal =  cartItems.reduce((total, shoe) => total + (shoe.price * shoe.quantity), 0).toFixed(2)
-     const savings =  ((1.05/100 )* subTotal).toFixed(2);
-     const total = (subTotal - savings).toFixed(2);
-     const orderTotal = (subTotal - savings).toFixed(2);
 
+    const { data: cartData = { items: [], totalItems: 0, subtotal: 0, 
+      total: 0, savings: 0, afterSavings:0, shipping: 0, orderTotal:0}, isError, isLoading } = useQuery({
+    queryKey: ["cart"],
+    queryFn: getCart,
+  });
+    
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error loading cart data</p>;
 
   return (
     <div>
-        <div style={{backgroundColor:'#A9A9A9',padding:'10px', fontWeight:'bold'}} ><h4>Shipping({totalItems})</h4></div>
+        <div style={{backgroundColor:'#A9A9A9',padding:'10px', fontWeight:'bold'}} ><h4>Shipping({cartData.totalItems})</h4></div>
         
         <div>
-            {cartItems.length > 0 ? (
+            {cartData.items && cartData.items.length> 0 ? (
                 <>
-                      {cartItems.map((shoe) => (
-                        <div key={shoe.id}  shoe = {shoe} className='cart-item' >
+                      {cartData.items.map((item, index) => (
+                        < div key={`cart-item-${item.productId}-${index}`} 
+                        style={{display: "flex",  margin: "1rem"}}>
                          
-                          <img  src= {shoe.image} alt= {shoe.title}
+                          <img  src= {`http://localhost:5000${item.product.image}`} alt= {item.product.title}
                           className='cart-item-image' 
                           style = {{width: '100px', height: "80px", objectFit:'cover' }}
                           />
-                           <div>
-                          <p style={{color: 'black'}} > 
-                            Price: ${shoe.price}
+                           <div style={{paddingLeft: '1rem'}}>
+                            <h4 style={{color: 'black'}} > 
+                            {item.product.title}
+                            </h4>
+                          <p style={{color: 'black', }} > 
+                            Price: ${item.product.price}
                             </p>
                           <p style={{color: 'black'}} > 
-                            Quantity: {shoe.quantity}
+                            Quantity: {item.quantity}
                             </p>
                           <p style={{color: 'black'}} > 
-                            Subtotal: ${(shoe.price * shoe.quantity).toFixed(2)}
+                            Subtotal: ${item.subtotal.toFixed(2)}
                             </p>
                             </div>
                           </div>
@@ -42,20 +48,24 @@ const Summary = () => {
                              <div style={{backgroundColor:'#A9A9A9',padding:'10px', fontWeight:'bold'}}> <h4>Order Summary</h4></div> 
                        <div className={styles.shippingContent} > 
                         <div><p>Original Price : </p></div>
-                        <div>${subTotal}</div>
+                        <div>${cartData.subtotal}</div>
                         </div>
                         <div className={styles.shippingContent}>
-                        <div><p>Your Savings</p></div>
-                        <div>$ {savings} </div>
+                        <div><p>Your Savings:</p></div>
+                        <div>$ {cartData.savings} </div>
                         </div>
                         <div className={styles.shippingContent}>
                           <div> <p> Subtotal:</p></div>
-                          <div>${total}</div>
+                          <div>${cartData.afterSavings}</div>
+                        </div>
+                        <div className={styles.shippingContent}>
+                          <div> <p> Shipping Fee:</p></div>
+                          <div>${cartData.shipping}</div>
                         </div>
                     
                      <div  className={styles.shippingContent}>
                           <div><h4 style={{color: 'black', fontWeight:'bold', fontSize:'16px'}}>Order Total:</h4></div>
-                          <div> ${orderTotal}</div>
+                          <div> ${cartData.orderTotal}</div>
                      </div>
                    
                     
@@ -71,9 +81,3 @@ const Summary = () => {
 
 export default Summary;
 
-// .shippingContent {
-//   flex: 1;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-// }

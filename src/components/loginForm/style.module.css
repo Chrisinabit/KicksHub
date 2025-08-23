@@ -40,39 +40,52 @@
   color: #666;
 }
 
-.buttonGroup {
-  width: 100%;
-  border: 1px solid #C5C6C7;
-  border-radius: 0;
-  height: 3rem;
-  font-weight: bold;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-
-.group button:first-child {
-  border-right: none;
-  margin:0px;
-}
-
-/* .group button:last-child {
- border-left: none;
-} */
-.buttonGroup:active{
-    background-color: #C5C6C7;
-}
-
 .buttonSubmit {
   width: 100%;
   border: none;
   border-radius: 0.5rem;
-  background-color: red;
+  //background-color: red;
   color: #FFFFFF;
   height: 3rem;
   font-size: 1rem;
   font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
+}
+.buttonActive {
+  background-color: red !important;
+  transform: scale(0.98);
+
+}
+
+.buttonInactive {
+  background-color: gray !important;
+  cursor: not-allowed;
+}
+
+/* styles.module.css */
+.input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.inputError {
+  border-color: #dc3545 !important;
+  background-color: #fff0f0;
+}
+.inputValid {
+  //border: 2px solid green;
+  border-color: #2ecc71 !important;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2) !important;
+  //background-color: #green;
+}
+
+.errorMessage {
+  color: #dc3545;
+  font-size: 0.8rem;
+  padding-bottom: 0.5rem;
 }
 
 /* Tablet devices (768px and up) */
@@ -91,10 +104,6 @@
     font-size: 1.05rem;
   }
 
-  .buttonGroup {
-    width: 100%;
-    font-size: 1.1rem;
-  }
 
   .buttonSubmit {
     font-size: 1.1rem;
@@ -112,11 +121,6 @@
   .phoneInput {
     padding: 0.875rem;
     font-size: 1.1rem;
-  }
-
-  .buttonGroup {
-    width: 50%;
-    font-size: 1.125rem;
   }
 
   .buttonSubmit {
@@ -140,7 +144,6 @@
   }
   
   .phoneInput,
-  .buttonGroup,
   .buttonSubmit {
     height: 2.75rem;
   }
@@ -153,7 +156,6 @@
   }
   
   .phoneInput,
-  .buttonGroup,
   .buttonSubmit {
     font-size: 0.9rem;
   }

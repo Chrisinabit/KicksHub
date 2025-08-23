@@ -1,0 +1,42 @@
+[
+  {
+    "productId": 12,
+    "quantity": 1
+  },
+  {
+    "productId": 7,
+    "quantity": 1
+  },
+  {
+    "productId": 20,
+    "quantity": 1
+  },
+  {
+    "productId": 18,
+    "quantity": 1
+  },
+  {
+    "productId": 22,
+    "quantity": 1
+  },
+  {
+    "productId": 2,
+    "quantity": 3
+  },
+  {
+    "productId": 47,
+    "quantity": 1
+  },
+  {
+    "productId": 3,
+    "quantity": 1
+  },
+  {
+    "productId": 1,
+    "quantity": 1
+  },
+  {
+    "productId": 8,
+    "quantity": 2
+  }
+]

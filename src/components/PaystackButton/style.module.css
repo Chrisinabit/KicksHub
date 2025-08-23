@@ -1,0 +1,21 @@
+.buttonSubmit {
+  width: 90%;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: red;
+  color: #ffffff;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.buttonActive {
+  background-color: red !important;
+  transform: scale(0.98);
+
+}
+
+.buttonInactive {
+  background-color: gray !important;
+  cursor: not-allowed;
+}

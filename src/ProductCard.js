@@ -1,37 +1,59 @@
 import { useState } from 'react';
-import { useContext } from 'react';
-import { ContextFunction } from './CartContext';
+import { addToCart } from './apiServices/shopApi.ts';
+import {  useMutation, useQueryClient } from '@tanstack/react-query';
 import Modal from './modal';
+
 import './itemModal.css'
 
  
 
-const ProductCard = ({shoe}) => {
+const ProductCard = ({product}) => {
+  const queryClient = useQueryClient();
    const [isModalOpen, setIsModalOpen] = useState(false);
-    const {QuickAdd} = useContext(ContextFunction);
-
     
 
     const openCard = ()=> {
   setIsModalOpen(true)
 }
+
+const addToCartMutation = useMutation({
+  mutationFn: (productId) => addToCart(productId, 1),
+  onSuccess: ()=> {
+    queryClient.invalidateQueries(["cart"]);
+  },
+  onError: (error) => {
+    console.error("Error adding to cart:", error);
+  }
+});
+ 
+const handleAddToCart = (e) => {
+  e.stopPropagation();
+  addToCartMutation.mutate(product.id);
+};
+
+
   return (
     <>
-    <div key={shoe.id} className="shoe-card" onClick={openCard} >
-      <div className="">
-                <img className='product-image' src={shoe.image} alt={shoe.title} />
-                <h3>{shoe.title}</h3>
-                <p>${shoe.price}</p>
-                <div>{shoe.rating}</div>
-                  <div className='truncate-text'>{shoe.description}</div>
-                
+    <div  onClick={openCard} >
+     
+                <img className='product-img' src={`http://localhost:5000${product.image}`} alt={product.title} />
+                 <div className="product-info">
+                <h3 className='product-name'>{product.title}</h3>
+                <p className='product-price1'>${product.price}</p>
+                <div className='product-rating1'>{product.rating}</div>
+                  <div className='truncate-text'>{product.description}</div>
+                <button className="add-to-cart"
+                 onClick={handleAddToCart }
+                 disabled = {addToCartMutation.isLoading}>
+                  {addToCartMutation.isLoading? 'Adding...' : ' Add to Cart'}
+                 </button>
                 </div>
               </div>
               
   
    
   <Modal isOpen={isModalOpen} >
-    <div key={shoe.id} className="product-modal-card">
+    <div className="product-modal-card">
   <button className='continue-shopping-btn' onClick={() => setIsModalOpen(false)}>
     Continue Shopping
   </button>
@@ -42,34 +64,50 @@ const ProductCard = ({shoe}) => {
   
   <div className="product-content">
     <img 
-      src={shoe.image} 
-      alt={shoe.title}
+      src={`http://localhost:5000${product.image}`}
+      alt={product.title}
       className='product-image'
     />
     
     <div className='product-info-container'>
-      <span className='product-tagline'>{shoe.Tagline}</span>
-      <h2 className='product-title'>{shoe.title}</h2>
-      <p className='product-description'>{shoe.description}</p>
-      <h3 className='product-price'>${shoe.price}</h3>
-      <span className='product-category'>{shoe.category}</span>
+      <span className='product-tagline'>{product.Tagline}</span>
+      <h2 className='product-title'>{product.title}</h2>
+      <p className='product-description'>{product.description}</p>
+      <h3 className='product-price'>${product.price}</h3>
+      <span className='product-category'>{product.category}</span>
       
       <div className='product-rating'>
         <span className="rating-stars">★★★★★</span>
-        <span className="rating-text">({shoe.rating}/5)</span>
+        <span className="rating-text">({product.rating}/5)</span>
       </div>
       
       <div className="variation-section">
         <p className='variation-title'>Variation Available</p>
         <div className="size-options">
-          {shoe.size && (
-            <span className="size-badge">{shoe.size}</span>
-          )}
-        </div>
-      </div>
+          {product.size && (
+         <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+                      {product.size.split(' ').map((size, index) => (
+                        <span key={index} className="size-badge" style={{
+                          padding: "4px 8px",
+                          border: "1px solid #ddd",
+                          borderRadius: "4px",
+                          fontSize: "12px",
+                        
+                        }}>
+                          {size}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
       
-      <button className='add-to-cart-btn' onClick={() => QuickAdd(shoe)}>
-        Add to Cart
+      <button className='add-to-cart-btn' 
+      onClick={() => addToCartMutation.mutate(product.id)}
+      disabled= {addToCartMutation.isLoading}
+      >
+        {addToCartMutation.isLoading? 'Adding...' : ' Add to Cart'}
+       
       </button>
     </div>
   </div>

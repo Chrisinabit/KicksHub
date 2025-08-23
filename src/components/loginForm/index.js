@@ -1,19 +1,20 @@
-import { Formik, Form } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { loginSchema } from "../validation/validationSchema";
 import styles from "./style.module.css";
 
 const Login = () => {
-  const [enterEmail, setEnterEmail] = useState('')
+ 
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false);
-  //const [setError] = useState("");
 
-  const isFormValid = enterEmail.trim() !== "" && password.trim() !== "";
+
+  
   const navigate = useNavigate();
 
-  const onSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
    console.log('submitted')
    navigate('/ship')
@@ -24,25 +25,46 @@ const Login = () => {
       <div>
         <Formik
           initialValues={{ email: "", password: "" }}
-          onSubmit={onSubmit}
+          validationSchema={loginSchema}
+          onSubmit={handleSubmit}
           navigate={useNavigate}
-          isFormValid={isFormValid}
+         
         >
-          {({ handleChange }) => (
-            <Form onSubmit={onSubmit}>
+          {({ handleChange, errors, touched, handleBlur }) => {
+            const isFormValid =
+             Object.keys(errors).length === 0 &&
+             Object.keys(touched).length > 0;
+
+            return (
+            <Form onSubmit={handleSubmit}>
               <div>
                 <br />
-                <input
+                <Field
                   type="email"
                   name="email"
                   placeholder="Email"
-                  value={Formik.values}
-                  onChange={(e) => setEnterEmail(e.target.value)}
-                  className={styles.phoneInput}
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  className={`${styles.phoneInput} ${
+                            errors.email && touched.email
+                              ? styles.inputError
+                              : ""
+                          } 
+                          ${
+                            touched.email && !errors.email
+                              ? styles.inputValid
+                              : ""
+                          }`}
                   required
                 />
+                 <ErrorMessage
+                    name="email"
+                    component="div"
+                    className={styles.errorMessage}
+                  />
+
                 <div className={styles.passwordContainer}>
-                  <input
+                  <Field
                     id="password"
                     type={showPassword ? "text" : "password"}
                     name="password"
@@ -52,8 +74,24 @@ const Login = () => {
                       setPassword(e.target.value);
                       handleChange(e);
                     }}
-                    className={styles.phoneInput}
+                    className={`${styles.phoneInput} ${
+                      errors.password && touched.password
+                        ? styles.inputError
+                        : ""
+                         } 
+                          ${
+                            touched.email && !errors.email
+                              ? styles.inputValid
+                              : ""
+                    }`}
+                    required
                   />
+                   <ErrorMessage
+                    name="password"
+                    component="div"
+                    className={styles.errorMessage}
+                  />
+
 
                   <span
                     onClick={() => setShowPassword(!showPassword)}
@@ -73,10 +111,12 @@ const Login = () => {
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <input
                       type="checkbox"
-                      id="remember me"
-                      name="remember me"
+                      id="check"
+                      name="check"
                       className={styles.formCheck}
                     />
+                    
+                
                     <label
                       htmlFor="remember me"
                       style={{
@@ -105,9 +145,11 @@ const Login = () => {
                 <div>
                   <button
                     type="submit"
-                    className={styles.buttonSubmit}
+                    onClick={handleSubmit}
+                    className={`${styles.buttonSubmit} ${
+                      isFormValid ? styles.buttonActive : styles.buttonInactive}`}
                     disabled={!isFormValid}
-                    style={{ backgroundColor: !isFormValid ? "gray" : "red" }}
+                     
                   >
                     Login
                   </button>
@@ -119,7 +161,8 @@ const Login = () => {
                 </p>
               </div>
             </Form>
-          )}
+            );
+          }}
         </Formik>
       </div>
     </>

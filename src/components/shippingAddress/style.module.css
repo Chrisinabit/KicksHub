@@ -77,6 +77,28 @@
   font-weight: bold;
   cursor: pointer;
 }
+.buttonActive {
+  background-color: red !important;
+  transform: scale(0.98);
+
+}
+
+.buttonInactive {
+  background-color: gray !important;
+  cursor: not-allowed;
+}
+
+/* .invalidSubmit {
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #A9A9A9;
+  color: #ffffff;
+  height: 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: not allowed;
+} */
 .radioGroup {
   max-width: 600px;
   margin: 0;
@@ -211,15 +233,17 @@
 }
 
 .inputError {
-  border-color: #dc3545;
+  border-color: #dc3545 !important;
   background-color: #fff0f0;
 }
 
 .errorMessage {
   color: #dc3545;
   font-size: 0.8rem;
-  margin-top: 0.25rem;
+  padding-bottom: 1rem;
+  /* position: absolute; */
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -259,6 +283,10 @@
     font-size: 1.1rem;
     width:92%;
   }
+  .bottomContainer{
+    padding: 3rem;
+  }
+
 }
 
 /* Desktop devices (1024px and up) */
@@ -281,6 +309,7 @@
 
   .buttonSubmit {
     font-size: 1.125rem;
+    
   }
 }
 

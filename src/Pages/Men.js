@@ -1,25 +1,35 @@
-import product from '../data';
-import { useContext } from 'react';
-import { ContextFunction } from '../CartContext';
+//import { useQueryClient, useMutation } from '@tanstack/react-query';
 import ProductCard from '../ProductCard'; 
 import Footer from '../footer';
+import { getProducts } from '../apiServices/shopApi.ts';
+import { useQuery } from '@tanstack/react-query';
+import Loader from '../components/loader';
+import ErrorPage from '../components/ErrorPage';
 
 
 const Men = () => {
-  const {QuickAdd} = useContext(ContextFunction);
-  const mensShoes = product.filter((shoe) => shoe.gender === 'Men');
+
+  const { data: products = [], isLoading, error} = useQuery({
+    queryKey: ["products"],
+    queryFn: getProducts
+    
+  });
+
+
+
+  const mensShoes = products.filter((product) => product.gender === 'Men');
  
+   if (isLoading) return <div> <Loader /></div>;
+  if (error) return <div><ErrorPage /></div>;
 
  return (
   <>
         <div className="men-page">
-          <h1>Men's Collection</h1>
-          <div className="shoes-grid">
-            {mensShoes.map(shoe => (
+          <h1 className='section-title'>Men's Collection</h1>
+          <div className="product-grid">
+            {mensShoes.map(product => (
               <ProductCard
-                key={shoe.id}
-                shoe={shoe}
-                QuickAdd={QuickAdd} />
+                product={product} />
             ))}
           </div>
         </div>
