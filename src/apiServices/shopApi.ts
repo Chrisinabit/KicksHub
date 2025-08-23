@@ -1,5 +1,7 @@
+const BASE_URL = process.env.NODE_ENV === 'production' 
+  ? 'https://kickshub-backend.onrender.com'  // Your Render backend URL
+  : 'http://localhost:5000';
 
-const BASE_URL = "http://localhost:5000";
 
 //Products
 export async function getProducts() {

@@ -123,7 +123,9 @@ const writeOrders = (data) => {
 
 const app = express();
 app.use(cors({
-  origin: true,  // Allow all origins temporarily for testing
+  origin: ["https://kickshub234.netlify.app",
+          "http://localhost:3000",
+          ], 
   credentials: true
 }));
 app.use(express.json());
