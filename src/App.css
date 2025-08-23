@@ -1,4 +1,3 @@
-
 /* ===== GLOBAL STYLES ===== */
 * {
   margin: 0;
@@ -8,7 +7,6 @@
 }
 
 body {
-  //background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   color: #333;
   font-size: 14px; /* Mobile-first base */
@@ -34,8 +32,6 @@ a {
   top: 0;
   z-index: 100;
 }
-<<<<<<< HEAD
-
 
 .nav-container {
   display: flex;
@@ -462,9 +458,6 @@ ul {
 }
 
 .product-price1 {
-  /* font-weight: 700;
-  color: #ff6b6b;
-  margin-bottom: 1rem; */
   font-size: 1.5rem;
   font-weight: 800;
   background: linear-gradient(135deg, #667eea, #764ba2);
@@ -576,27 +569,21 @@ ul {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   margin-top: 2rem;
-  /* padding: 1rem; */
-  /* height: 15rem; */
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr; /* Mobile stack */
   gap: 2rem;
-  /* margin-bottom: 1.5rem; */
 }
 
-.footer-column {
-  /* margin-bottom: 1.5rem; */
-}
 
 .footer-column h3 {
   font-size: 1.2rem;
   margin-bottom: 1.2rem;
   position: relative;
-  /* padding-bottom: 0.5rem; */
 }
+
 .footer-column h3::after {
   content: "";
   left: 0;
@@ -831,7 +818,6 @@ ul {
     height: 70vh;
     background: url("../public/images/shoe15.jpg") center/cover no-repeat,
     linear-gradient(90deg, #6d9a23,#ce874b,#da8a9d);
-      /* linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
     background-blend-mode: overlay;
     padding: 4rem 2rem;
     text-align: center;
@@ -899,10 +885,6 @@ ul {
     gap: 1.5rem;
   }
 
-  .product-img {
-    /* max-height: 180px; */
-  }
-
   /* Footer */
   .footer-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -917,14 +899,11 @@ ul {
   }
 }
 
-
-
 /* ===== DESKTOP ENHANCEMENTS (1024px+) ===== */
 @media (min-width: 1024px) {
   .hero h1 {
     font-size: 3.5rem;
   }
-<<<<<<< HEAD
 
   .category-grid {
     grid-template-columns: repeat(2, 1fr);
