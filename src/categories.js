@@ -13,7 +13,7 @@ const Categories = ({categories, filterItems, categoryImages}) => {
         return (
           <div className="category-card" key = {index}  >
           <div className="category-info" >
-           {image && <img className="category-img"   src={category === "all" ? image : `http://localhost:5000${image}`} alt={category} />}
+           {image && <img className="category-img"   src={category === "all" ? image : `https://kickshub-backend.onrender.com${image}`} alt={category} />}
             <h3> {category} </h3>
              </div>
             <div> <button className=" explore-btn" key = {index} onClick={() => filterItems(category)}>
