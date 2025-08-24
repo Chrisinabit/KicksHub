@@ -36,7 +36,7 @@ const handleAddToCart = (e) => {
     <>
     <div  onClick={openCard} >
      
-                <img className='product-img' src={`https://kickshub-backend.onrender.com${product.image}`} alt={product.title} />
+                <img src={product.image} alt={product.title} className='product-img' />
                  <div className="product-info">
                 <h3 className='product-name'>{product.title}</h3>
                 <p className='product-price1'>${product.price}</p>
@@ -64,7 +64,7 @@ const handleAddToCart = (e) => {
   
   <div className="product-content">
     <img 
-      src={`https://kickshub-backend.onrender.com${product.image}`}
+      src={product.image}
       alt={product.title}
       className='product-image'
     />

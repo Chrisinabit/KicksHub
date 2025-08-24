@@ -24,7 +24,7 @@ const Summary = () => {
                         < div key={`cart-item-${item.productId}-${index}`} 
                         style={{display: "flex",  margin: "1rem"}}>
                          
-                          <img  src= {`https://kickshub-backend.onrender.com${item.product.image}`} alt= {item.product.title}
+                          <img  src={item.product.image} alt= {item.product.title}
                           className='cart-item-image' 
                           style = {{width: '100px', height: "80px", objectFit:'cover' }}
                           />
