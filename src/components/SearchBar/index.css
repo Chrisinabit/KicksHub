@@ -24,13 +24,12 @@
 .search-icon {
   position: absolute;
   right: 12px;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   width: 18px;
   height: 18px;
   color: #9ca3af;
   transition: color 0.3s ease;
-  pointer-events: none; /* makes sure icon doesn’t block clicks */
 }
 
 /* Empty input → gray icon */
